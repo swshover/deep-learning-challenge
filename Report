@@ -1,0 +1,15 @@
+The purpose of the report was to see if a deep learning network could be developing such that it had a greater accuracy than 75% in predicting whether ventures would be successful or not.
+
+I was unable to get my accuracy up to 75%, though I tried various.
+1) Foremost, I tried chaning the cutoff values for the application type and the classification. These had little impact on the resulting accuracy.
+2) Second, I tried dropping random columns to see if I could get the accuracy to increase as I suspected one column would not matter. I found that any combination I tried (though there are billions) would not work.
+3) I then tried adjusting the neuro network by adding another hidden layer to increase the model complexity and therefore (hopefully) increase accuracy.
+4) I also tried increasing and decreasing the units for each layer and again fell short - this may suggest that I kept under or overfitting the data and couldn't find the right combination.
+5) Lastly, I tried changing the activation functions to relu, sigmoid, and/or leaky relu and again failed.
+
+Overall, the result of the model indicate that I could get to about 72% accuracy at best. While that is short of the goal of 75%, it does get close to the result. If I could run a different analysis on this,
+I'd do one or both of these following ideas.
+1) XGBoost Classification model using random forests to determine the a successful venture (or not). Generally speaking, XGBoost does a good job in getting the right model in an efficient matter.
+2) If that didn't work, then I returned to the deep learning model, but I'd overhaul it with for loops. For example, running for loops increasing the units and changing the activiation types would result in
+  well over 1,000 models even I just had 3 layers with up to 10 units (not including activation type changes). That model would take forever to run, but it would find the appropriate combination for an effective model.
+  If it didn't, I would probably go through the data and remove all the one-off entries before then re-running the model as I tend to believe perserving the data is more important than removing one-off rows.
